@@ -1,0 +1,13 @@
+config:
+  target: "{{ $processEnvironment.ALB_DNS }}"
+  phases:
+    - duration: 1200
+      arrivalRate: 20
+  defaults:
+    headers:
+      host: "example.com"
+scenarios:
+  - flow:
+    - get:
+        url: "/api/v2/calc/fibo-nth/42"
+
