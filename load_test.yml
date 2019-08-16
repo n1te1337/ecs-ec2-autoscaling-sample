@@ -3,11 +3,14 @@ config:
   phases:
     - duration: 1200
       arrivalRate: 20
-  defaults:
-    headers:
-      host: "example.com"
 scenarios:
   - flow:
-    - get:
-        url: "/api/v2/calc/fibo-nth/42"
-
+      - get:
+          headers:
+            host: "web-1.com"
+          url: "/api/v2/calc/fibo-nth/42"
+  - flow:
+      - get:
+          headers:
+            host: "web-2.com"
+          url: "/api/v2/calc/fibo-nth/34"

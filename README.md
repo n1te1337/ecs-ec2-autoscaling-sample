@@ -1,6 +1,6 @@
 # ECS EC2 Autoscaling Sample
 
-A simple lab demonstrating autoscaling of ECS tasks and ECS container instances in tandem.
+Simple demo showing autoscaling of ECS Tasks and Container Instances in tandem.
 
 ## Disclaimer
 
@@ -21,6 +21,8 @@ To start the load test run the following command:
  ALB_DNS=XXX node_modules/artillery/bin/artillery run load_test.yml
 ```
 Where `ALB_DNS` is the DNS of the load balancer created by the stack.
+
+The load test sends 20 RPS to two different services. To simulate different levels of CPU load, the first service generates the 42nd fibonacci number, and the second service generates the 34th.
 
 NB. The load test will take 20 minutes to complete and the autoscaling operations will start at the 5 minute mark.
 
